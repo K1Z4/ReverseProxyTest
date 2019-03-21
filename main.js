@@ -34,22 +34,25 @@ app.use(function(req, res, next){
     next();
 });
 
+const router = express.Router();
+
 const asyncMiddleware = fn =>
     (req, res, next) => {
         Promise.resolve(fn(req, res, next)).catch(next);
     };
 
-app.get('/register', asyncMiddleware(require('./controllers/register.js')))
-app.post('/register', asyncMiddleware(require('./controllers/register-POST.js')))
+router.get('/register', asyncMiddleware(require('./controllers/register.js')))
+router.post('/register', asyncMiddleware(require('./controllers/register-POST.js')))
 
-app.get('/login', asyncMiddleware(require('./controllers/login.js')))
-app.post('/login', passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login?failure=true' }), (req, res) => res.redirect("/"))
-app.get('/logout', (req, res) => {
+router.get('/login', asyncMiddleware(require('./controllers/login.js')))
+router.post('/login', passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login?failure=true' }), (req, res) => res.redirect("/"))
+router.get('/logout', (req, res) => {
     req.session.destroy();
     res.redirect('/');
 });
 
-app.get('/', (req, res) => res.render("index"));
+router.get('/', (req, res) => res.render("index"));
+app.use("/instance/1/", router)
 
 app.all('*', (req, res) => res.status(404).send('404 - Page not found'));
 app.use((err, req, res, next) => {
