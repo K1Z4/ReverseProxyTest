@@ -1,0 +1,32 @@
+{
+  "name": "authtemplate",
+  "version": "1.0.0",
+  "description": "Express, passport, SQLite, ejs web app template",
+  "main": "index.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/K1Z4/AuthTemplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/K1Z4/AuthTemplate/issues"
+  },
+  "homepage": "https://github.com/K1Z4/AuthTemplate#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.0",
+    "body-parser": "^1.18.3",
+    "connect-sqlite3": "^0.9.11",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "winston": "^3.0.0"
+  }
+}

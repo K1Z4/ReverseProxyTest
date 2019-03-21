@@ -1,0 +1,26 @@
+.navbar-nav .nav-link {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.container-small {
+    max-width: 500px;
+}
+
+@media (max-width: 700px) {
+    .navbar, .navbar-nav {
+        display: block;
+        text-align: center;
+    }
+    .navbar-nav .nav-link {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .nav-item {
+        margin: 7px 0;
+        display: block;
+    }
+    .nav-link {
+        display: block;
+    }
+}

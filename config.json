@@ -1,0 +1,7 @@
+{
+    "port": 80,
+    "sessionSecret": "mysessionsecret",
+    "crypto": {
+        "saltRounds": 12
+    }
+}
